@@ -8,7 +8,24 @@ const dates = [
 ];
 
 // TODO: Buatlah fungsi createDate
-const createDate = null;
+const createDate = (tanggal, param) => {
+  let hasil = [];
+  if(param !== undefined){
+    for (let index = 0; index < tanggal.length; index++) {
+      hasil.push(Date.parse(tanggal[index]))
+      
+    }
+    return hasil[param].toString().slice(0,-3);
+  }
+  else{
+    for (let index = 0; index < tanggal.length; index++) {
+      hasil.push(Date.parse(tanggal[index]).toString().slice(0,-3))
+      
+    }
+    return hasil.sort().join('-');
+  }
+
+}
 
 // ! JANGAN DIMODIFIKASI
 (() => {
